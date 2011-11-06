@@ -1,0 +1,58 @@
+{{extend 'layout.html'}}
+
+<article class="product">
+  <img src="{{=URL('static','images/tablet.png')}}" alt="Tablet" />
+  <h3>web2py<sup>TM</sup> Web Framework</h3>
+  <p>Free open source full-stack framework for rapid development of fast, scalable, <a href="http://www.web2py.com/book/default/chapter/01#security" target="_blank">secure</a> and portable database-driven web-based applications. Written and programmable in <a href="http://www.python.org" target="_blank">Python</a>. <a href="http://www.gnu.org/licenses/lgpl.html">LGPLv3 License</a></p>
+  <a class="big-button" href="https://github.com/web2py">DOWNLOAD NOW (FREE)</a>
+  <div id="thumbnails" class="gallery">
+    <h3 class="feature-title">SITES POWERED</h3>
+    <a href="http://web2py.com/poweredby"><img id="img1" width="100px"/></a>
+    <a href="http://web2py.com/poweredby"><img id="img2" width="100px"/></a>
+    <a href="http://web2py.com/poweredby"><img id="img3" width="100px"/></a>
+    <a href="http://web2py.com/poweredby"><img id="img4" width="100px"/></a>
+  </div>
+  <script>
+    jQuery(function(){    
+    var images = {{=images}}; for(var i=0; i<4; i++) jQuery('#img'+(i+1)).attr('src',images[i]);
+    });
+  </script>
+</article>
+
+{{block sidebar}}
+<ul class="features-list clearfix">
+  <li>
+    <img src="{{=URL('static','images/system.png')}}" alt="System" />
+    <h3 class="feature-title">BATTERIES INCLUDED</h3>
+    <p>Everything you need in one package including fast multi-threaded web server, SQL database and web based interface. No third party dependices but works with <a>third party tools</a>.</p>
+  </li>
+  <li>
+    <img src="{{=URL('static','images/tools.png')}}" alt="Tools" />
+    <h3 class="feature-title">WEB BASED IDE</h3>
+    <p>Create, modify, deploy and manage application from anywhere using your browser. One web2py instance can run multiple web sites using different databases. Try the <a href="http://web2py.com/demo_admin">interactive demo</a>.</p>
+  </li>
+  <li class="last">
+    <img src="{{=URL('static','images/search.png')}}" alt="Search" />
+    <h3 class="feature-title">EXTENSIVE DOCUMENTATION</h3>
+    <p>Start with some <a href="{{=URL('examples')}}">quick examples</a>, then read the <a href="http://web2py.com/book">reference manual</a>, watch <a href="http://vimeo.com/album/178500">videos</a>, and join the <a href="http://webchat.freenode.net/?channels=web2py">IRC channel</a> for discussion. Take advantage of the <a href="http://web2py.com/layouts">free layouts</a> and <a href="http://dev.s-cubism.com/web2py_plugins">free plugins</a>.</p>
+  </li>
+</ul>
+<div class="third-column">
+  <blockquote>
+    <p>It took a while for me to realize web2py has the architecture I always wanted to achieve in my web application framework development, its design is clearly superior... I can finally sleep peacefully!</p>
+  </blockquote>
+  <h3 class="user-title">Mr X</h3>
+</div>
+<div class="third-column">
+  <blockquote>
+    <p>My vision for the web2py Framework was to bring flexibility and extensibility without losing stability and backward compatibility, web2py clearly fits the bill. Thanks web2py developers for your enlightenment!</p>
+  </blockquote>
+  <h3 class="user-title">Mr Y</h3>
+</div>
+<div class="third-column last">
+  <blockquote>
+    <p>Until now I was using different well-known libraries to get the workflow I thought was best, but now it's over... Finally one framework for all my needs, one tool to rule them all!</p>
+  </blockquote>
+  <h3 class="user-title">Mr Z</h3>
+</div>
+{{end}}

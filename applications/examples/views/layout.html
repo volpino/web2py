@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta charset="UTF-8" />
+    <meta name="description" content="web2py.com!" />
+    <meta name="author" content="Massimo Di Pierro" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="shortcut icon" href="" />
+    <link rel="apple-touch-icon" href="" />
+
+    <style type="text/css"></style>
+    <title>web2py</title>
+
+    <link rel="stylesheet" href="{{=URL('static','css/style.css')}}">
+    <link rel="stylesheet" href="{{=URL('static','css/menu.css')}}">
+    <!--[if IE 7 ]> <link rel="stylesheet" href="css/ie7.css')}}"> <![endif]-->
+    <script src="{{=URL('static','js/modernizr-1.6.min.js')}}"></script>
+    <script src="{{=URL('static','js/jquery.js')}}" type="text/javascript"></script>
+    <!--[if lt IE 7 ]>
+	<script src="{{=URL('static','js/dd_belatedpng.js')}}"></script>
+	<script> DD_belatedPNG.fix('img, .png_bg');</script>
+	<![endif]-->
+    {{include 'web2py_ajax.html'}}
+  </head>
+  
+  <body>
+    <header>
+      <div class="inner-header">
+	<img src="{{=URL('static','images/web2py_logo.png')}}" alt="web2pyramid">
+	<div class="headermenu">
+          <a href="{{=URL('default','index')}}"
+             class="home"><em style="display:none;">{{=T('Home')}}</em></a>
+          <a href="{{=URL('default','what')}}"
+             class="about what"><em style="display:none;">{{=T('About')}}</em></a>
+          <a href="{{=URL('default','download')}}"
+             class="download"><em style="display:none;">{{=T('Download')}}</em></a>
+          <a href="{{=URL('default','who')}}"
+             class="staff who"><em style="display:none;">{{=T('Staff')}}</em></a>
+          <a href="{{=URL('default','support')}}"
+             class="support"><em style="display:none;">{{=T('Support')}}</em></a>
+          <a href="{{=URL('default','documentation')}}"
+             class="documentation"><em style="display:none;">{{=T('Documentation')}}</em></a>
+        </div>
+      </div>
+    </header>
+    <section id="tagline">
+      <div id="tagline-content">Awarded Best Open Source Development Software in 2011</div>
+    </section>
+    <section id="product">
+      <!-- Main content area -->
+      {{include}}
+    </section>
+    <aside>
+      {{block sidebar}}
+      {{end}}
+    </aside>
+    
+    <footer>
+      <section id="footer-container">
+	<!-- Footer -->
+	<article class="copy">
+          © <a title="web2py.com" href="http://web2py.com">web2py.com</a> 2011, All rights reserved.
+	  - User communities in <a>English<a>, <a>Spanish</a>, <a>Japanese</a>
+	</article>
+      </section>
+    </footer>    
+  </body>
+</html>
