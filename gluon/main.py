@@ -735,6 +735,7 @@ class HttpServer(object):
         server_name=None,
         request_queue_size=5,
         timeout=10,
+        socket_timeout=1,
         shutdown_timeout=None, # Rocket does not use a shutdown timeout
         path=None,
         interfaces=None # Rocket is able to use several interfaces - must be list of socket-tuples as string
@@ -770,6 +771,7 @@ class HttpServer(object):
             server_name = socket.gethostname()
         logger.info('starting web server...')
         rocket.SERVER_NAME = server_name
+        rocket.SOCKET_TIMEOUT = socket_timeout
         sock_list = [ip, port]
         if not ssl_certificate or not ssl_private_key:
             logger.info('SSL is off')
@@ -783,7 +785,7 @@ class HttpServer(object):
             sock_list.extend([ssl_private_key, ssl_certificate])
             if ssl_ca_certificate:
                 sock_list.append(ssl_ca_certificate)
-            
+
             logger.info('SSL is ON')
         app_info = {'wsgi_app': appfactory(wsgibase,
                                            log_filename,
